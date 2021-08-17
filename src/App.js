@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { setAuth } from './redux/Actioncreators/authActionCreators';
+import { logOut, setAuth } from './redux/Actioncreators/authActionCreators';
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
 
     {(state.isLoggedIn ? <>
       <p>welcome {state.user}</p>
-      <button >LogOut</button>
+      <button onClick={()=>dispatch(logOut())}>LogOut</button>
     </> : <>
       <button onClick={()=>handleSubmit()} >LogIn</button>
     </>)}
